@@ -32,13 +32,14 @@ export default function HomePage() {
           </div>
         </div>
         <p className="text-right mt-8">
-          ปัจจุบันค่าเฟ่ และห้องสมุดของเรา อยู่ในช่วงการดูแลของ ....
+          ปัจจุบันค่าเฟ่ และห้องสมุดของเรา อยู่ในช่วงการดูแลของ นักศึกษารหัส 65070232 
+          ชื่อ นายสหชินเดช เกตุดี ใช่ครับ ผมเอง ที่นั่งอยู่ตรงเกือบหน้าสุดฝั่งซ้าย 
+          ดันกลายมาเป็นผู้ดูแลร้านคาเฟ่และห้องสมุด IoT แห่งนี้ไปเสียได้ หาก 
           {/* TODO: ชื่อของตนเอง, รหัสประจำตัวนักศึกษา และแนะนำคาเฟ่นี้ต่ออีกสักหน่อย + ใส่รูปของตนเอง (ไม่จำเป็นหากไม่สะดวกใจใส่รูป) */}
-          ซึ่งมีบริการ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          placeat sit ea sapiente officia sunt cumque impedit, reiciendis quis eius asperiores!
-          Minus, mollitia? Vitae inventore odio quod ducimus similique, expedita sequi, reiciendis
-          rem recusandae impedit voluptatibus quo veritatis ut quis et suscipit? Eligendi, neque!
-          Earum quaerat unde similique totam. Pariatur!
+          พูดถึงที่นี่ ผมบอกได้เลยครับว่าที่นี่เป็นหนึ่งในคาเฟ่ที่นั่งสบาย และบันเทิงมากที่สุดในเทอมนี้
+          ด้วยวิธีการสอนของ นายกฤตณัฏฐ์ ศิริพรนพคุณ และ ผศ.ดร. ปานวิทย์ ธุวะนุติ ที่ให้บรรยากาศสบายๆ เป็นกันเอง และเฮฮา
+          และการนำเนื้อหาที่มีความน่าสนใจมาสอนให้กับผู้ที่ผ่านไปผ่านมาอย่างพวกเรา แถมยังไม่มีภาษา C มากวนใจอีก (ใช่ครับ ผมเกลียดภาษา C) 
+          ทำให้ผมไม่แปลกใจเลยว่าทำไมที่นี่ถึงเป็นสถานที่โปรดของผมในเทอมนี้
         </p>
       </section>
 
