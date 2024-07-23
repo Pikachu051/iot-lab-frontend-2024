@@ -20,7 +20,7 @@ export default function BookCreatePage() {
       is_published: false,
       detail : "",
       short_desc : "",
-      category: ["Fiction", "Non-Fiction", "Science Fiction", "Mystery", "Romance", "Documentary"]
+      category: ""
     },
 
     validate: {
