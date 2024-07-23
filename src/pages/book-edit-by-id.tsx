@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { Book } from "../lib/models";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../components/layout";
-import { Alert, Button, Checkbox, Container, Divider, NumberInput, TextInput, NativeSelect } from "@mantine/core";
+import { Alert, Button, Checkbox, Container, Divider, NumberInput, TextInput, MultiSelect } from "@mantine/core";
 import Loading from "../components/loading";
 import { IconAlertTriangleFilled, IconTrash } from "@tabler/icons-react";
 import { isNotEmpty, useForm } from "@mantine/form";
@@ -179,8 +179,9 @@ export default function BookEditById() {
                   {...bookEditForm.getInputProps("year")}
                 />
 
-               <NativeSelect
+               <MultiSelect
                   label="หมวดหมู่"
+                  placeholder="เลือกหมวดหมู่"
                   data={[
                     { value: "Fiction", label: "นิยาย" },
                     { value: "Non-Fiction", label: "นิยายสารคดี" },
@@ -214,7 +215,7 @@ export default function BookEditById() {
                         title: "คุณต้องการลบหนังสือเล่มนี้ใช่หรือไม่",
                         children: (
                           <span className="text-xs">
-                            เมื่อคุณดำนเนินการลบหนังสือเล่มนี้แล้ว จะไม่สามารถย้อนกลับได้
+                            เมื่อคุณดำเนินการลบหนังสือเล่มนี้แล้ว จะไม่สามารถย้อนกลับได้
                           </span>
                         ),
                         labels: { confirm: "ลบ", cancel: "ยกเลิก" },

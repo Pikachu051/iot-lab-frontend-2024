@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/layout";
-import { Button, Checkbox, Container, Divider, NumberInput, TextInput, NativeSelect } from "@mantine/core";
+import { Button, Checkbox, Container, Divider, NumberInput, TextInput, MultiSelect } from "@mantine/core";
 import { isNotEmpty, useForm } from "@mantine/form";
 import { useState } from "react";
 import axios, { AxiosError } from "axios";
@@ -113,8 +113,9 @@ export default function BookCreatePage() {
               {...bookCreateForm.getInputProps("year")}
             />
 
-            <NativeSelect
+            <MultiSelect
               label="หมวดหมู่"
+              placeholder="เลือกหมวดหมู่"
               data={[
                 { value: "Fiction", label: "นิยาย" },
                 { value: "Non-Fiction", label: "นิยายสารคดี" },
