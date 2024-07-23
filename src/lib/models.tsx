@@ -6,5 +6,5 @@ export interface Book {
   is_published: boolean;
   detail: string;
   short_desc : string;
-  category: string[];
+  categories : string[];
 }

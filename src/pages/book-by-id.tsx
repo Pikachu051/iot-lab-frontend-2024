@@ -53,15 +53,11 @@ export default function BookByIdPage() {
                   <h3>หมวดหมู่</h3>
                   {/* TODO: เพิ่มหมวดหมู่(s) */}
                   <div className="flex flex-wrap gap-2">
-                    {book.category.map((category) => (
-                      <Badge key={category} color="teal">
+                    {book.categories.map((category) => (
+                      <Badge color="teal">
                         #{category}
                       </Badge>
                     ))}
-                    <Badge color="teal">#</Badge>
-                    <Badge color="teal">#หมวดหมู่ 2</Badge>
-                    <Badge color="teal">#หมวดหมู่ 3</Badge>
-                    <Badge color="teal">#หมวดหมู่ 4</Badge>
                   </div>
                 </div>
               </div>

@@ -28,14 +28,14 @@ export default function BookEditById() {
       is_published: false,
       detail : "",
       short_desc : "",
-      category: [""]
+      categories: [""]
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
-      category: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
+      categories: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
     },
   });
 
@@ -190,7 +190,7 @@ export default function BookEditById() {
                     { value: "Romance", label: "โรแมนติก" },
                     { value: "Documentary", label: "สารคดี" },
                   ]}
-                  {...bookEditForm.getInputProps("category")}
+                  {...bookEditForm.getInputProps("categories")}
                 />
                 {/* TODO: เพิ่มรายละเอียดหนังสือ */}
                 {/* TODO: เพิ่มเรื่องย่อ */}
