@@ -183,12 +183,12 @@ export default function BookEditById() {
                   label="หมวดหมู่"
                   placeholder="เลือกหมวดหมู่"
                   data={[
-                    { value: "Fiction", label: "นิยาย" },
-                    { value: "Non-Fiction", label: "นิยายสารคดี" },
-                    { value: "Science Fiction", label: "วิทยาศาสตร์" },
-                    { value: "Mystery", label: "ลึกลับ" },
-                    { value: "Romance", label: "โรแมนติก" },
-                    { value: "Documentary", label: "สารคดี" },
+                    { value: "นิยาย", label: "นิยาย" },
+                    { value: "นิยายสารคดี", label: "นิยายสารคดี" },
+                    { value: "วิทยาศาสตร์", label: "วิทยาศาสตร์" },
+                    { value: "ลึกลับ", label: "ลึกลับ" },
+                    { value: "โรแมนติก", label: "โรแมนติก" },
+                    { value: "สารคดี", label: "สารคดี" },
                   ]}
                   {...bookEditForm.getInputProps("categories")}
                 />
