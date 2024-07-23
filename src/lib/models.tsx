@@ -4,4 +4,7 @@ export interface Book {
   author: string;
   year: number;
   is_published: boolean;
+  detail: string;
+  short_desc : string;
+  category: string[];
 }

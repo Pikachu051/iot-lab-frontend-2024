@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/layout";
-import { Button, Checkbox, Container, Divider, NumberInput, TextInput } from "@mantine/core";
+import { Button, Checkbox, Container, Divider, NumberInput, TextInput, NativeSelect } from "@mantine/core";
 import { isNotEmpty, useForm } from "@mantine/form";
 import { useState } from "react";
 import axios, { AxiosError } from "axios";
@@ -18,12 +18,16 @@ export default function BookCreatePage() {
       author: "",
       year: 2024,
       is_published: false,
+      detail : "",
+      short_desc : "",
+      category: ["Fiction", "Non-Fiction", "Science Fiction", "Mystery", "Romance", "Documentary"]
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
+      category: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
     },
   });
 
@@ -76,11 +80,29 @@ export default function BookCreatePage() {
               placeholder="ชื่อหนังสือ"
               {...bookCreateForm.getInputProps("title")}
             />
-
+            
             <TextInput
               label="ชื่อผู้แต่ง"
               placeholder="ชื่อผู้แต่ง"
               {...bookCreateForm.getInputProps("author")}
+            />
+
+            <TextInput
+              label="รายละเอียดหนังสือ"
+              placeholder="รายละเอียดหนังสือ"
+              {...bookCreateForm.getInputProps("detail")}
+            />
+
+            <TextInput
+              label="เรื่องย่อ"
+              placeholder="เรื่องย่อ"
+              {...bookCreateForm.getInputProps("short_desc")}
+            />
+
+            <TextInput
+              label="หมวดหมู่"
+              placeholder="หมวดหมู่"
+              {...bookCreateForm.getInputProps("category")}
             />
 
             <NumberInput
@@ -89,6 +111,19 @@ export default function BookCreatePage() {
               min={1900}
               max={new Date().getFullYear() + 1}
               {...bookCreateForm.getInputProps("year")}
+            />
+
+            <NativeSelect
+              label="หมวดหมู่"
+              data={[
+                { value: "Fiction", label: "นิยาย" },
+                { value: "Non-Fiction", label: "นิยายสารคดี" },
+                { value: "Science Fiction", label: "วิทยาศาสตร์" },
+                { value: "Mystery", label: "ลึกลับ" },
+                { value: "Romance", label: "โรแมนติก" },
+                { value: "Documentary", label: "สารคดี" },
+              ]}
+              {...bookCreateForm.getInputProps("category")}
             />
 
             {/* TODO: เพิ่มรายละเอียดหนังสือ */}

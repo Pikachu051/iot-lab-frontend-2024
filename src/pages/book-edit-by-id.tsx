@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { Book } from "../lib/models";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../components/layout";
-import { Alert, Button, Checkbox, Container, Divider, NumberInput, TextInput } from "@mantine/core";
+import { Alert, Button, Checkbox, Container, Divider, NumberInput, TextInput, NativeSelect } from "@mantine/core";
 import Loading from "../components/loading";
 import { IconAlertTriangleFilled, IconTrash } from "@tabler/icons-react";
 import { isNotEmpty, useForm } from "@mantine/form";
@@ -26,12 +26,16 @@ export default function BookEditById() {
       author: "",
       year: 2024,
       is_published: false,
+      detail : "",
+      short_desc : "",
+      category: ["Fiction", "Non-Fiction", "Science Fiction", "Mystery", "Romance", "Documentary"]
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
+      category: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
     },
   });
 
@@ -155,6 +159,18 @@ export default function BookEditById() {
                   {...bookEditForm.getInputProps("author")}
                 />
 
+                <TextInput
+                  label="รายละเอียดหนังสือ"
+                  placeholder="รายละเอียดหนังสือ"
+                  {...bookEditForm.getInputProps("detail")}
+                />
+
+                <TextInput
+                  label="เรื่องย่อ"
+                  placeholder="เรื่องย่อ"
+                  {...bookEditForm.getInputProps("short_desc")}
+                />
+
                 <NumberInput
                   label="ปีที่พิมพ์"
                   placeholder="ปีที่พิมพ์"
@@ -163,6 +179,18 @@ export default function BookEditById() {
                   {...bookEditForm.getInputProps("year")}
                 />
 
+               <NativeSelect
+                  label="หมวดหมู่"
+                  data={[
+                    { value: "Fiction", label: "นิยาย" },
+                    { value: "Non-Fiction", label: "นิยายสารคดี" },
+                    { value: "Science Fiction", label: "วิทยาศาสตร์" },
+                    { value: "Mystery", label: "ลึกลับ" },
+                    { value: "Romance", label: "โรแมนติก" },
+                    { value: "Documentary", label: "สารคดี" },
+                  ]}
+                  {...bookEditForm.getInputProps("category")}
+                />
                 {/* TODO: เพิ่มรายละเอียดหนังสือ */}
                 {/* TODO: เพิ่มเรื่องย่อ */}
                 {/* TODO: เพิ่มหมวดหมู่(s) */}
