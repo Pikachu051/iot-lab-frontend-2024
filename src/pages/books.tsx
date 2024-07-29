@@ -25,7 +25,7 @@ export default function BooksPage() {
 
         <section className="container mx-auto py-8">
           <div className="flex justify-between">
-            <h1>รายการหนังสือ</h1>
+            <h1 className="pb-2">รายการหนังสือ</h1>
 
             <Button
               component={Link}
