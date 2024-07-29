@@ -10,7 +10,6 @@ export default function BookByIdPage() {
   const { bookId } = useParams();
 
   const { data: book, isLoading, error } = useSWR<Book>(`/books/${bookId}`);
-  console.log(book?.categories);
   return (
     <>
       <Layout>
@@ -53,7 +52,9 @@ export default function BookByIdPage() {
                   <h3>หมวดหมู่</h3>
                   {/* TODO: เพิ่มหมวดหมู่(s) */}
                   <div className="flex flex-wrap gap-2">
-                      <Badge color="teal">#นกคุ้มลี้</Badge>
+                    {book.categories.map((category) => (
+                      <Badge color="teal">#{category}</Badge>
+                    ))}
                   </div>
                 </div>
               </div>
