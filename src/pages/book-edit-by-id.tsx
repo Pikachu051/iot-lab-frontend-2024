@@ -40,6 +40,7 @@ export default function BookEditById() {
   });
 
   const handleSubmit = async (values: typeof bookEditForm.values) => {
+    console.log(bookEditForm.values);
     try {
       setIsProcessing(true);
       await axios.patch(`/books/${bookId}`, values);
@@ -192,9 +193,6 @@ export default function BookEditById() {
                   ]}
                   {...bookEditForm.getInputProps("categories")}
                 />
-                {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-                {/* TODO: เพิ่มเรื่องย่อ */}
-                {/* TODO: เพิ่มหมวดหมู่(s) */}
 
                 <Checkbox
                   label="เผยแพร่"

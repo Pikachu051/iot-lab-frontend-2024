@@ -20,14 +20,14 @@ export default function BookCreatePage() {
       is_published: false,
       detail : "",
       short_desc : "",
-      category: ""
+      categories: []
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
-      category: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
+      categories: isNotEmpty("กรุณาระบุหมวดหมู่ของหนังสือ"),
     },
   });
 
@@ -99,12 +99,6 @@ export default function BookCreatePage() {
               {...bookCreateForm.getInputProps("short_desc")}
             />
 
-            <TextInput
-              label="หมวดหมู่"
-              placeholder="หมวดหมู่"
-              {...bookCreateForm.getInputProps("category")}
-            />
-
             <NumberInput
               label="ปีที่พิมพ์"
               placeholder="ปีที่พิมพ์"
@@ -124,7 +118,7 @@ export default function BookCreatePage() {
                 { value: "โรแมนติก", label: "โรแมนติก" },
                 { value: "สารคดี", label: "สารคดี" },
               ]}
-              {...bookCreateForm.getInputProps("category")}
+              {...bookCreateForm.getInputProps("categories")}
             />
 
             {/* TODO: เพิ่มรายละเอียดหนังสือ */}
