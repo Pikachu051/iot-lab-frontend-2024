@@ -34,7 +34,7 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-3 gap-4 pt-5">
           <div>
-            <img src={myImage} alt="Me" className="h-80 w-full object-cover" />
+            <img src={myImage} alt="Me" className="h-[60%] w-full object-cover" />
           </div>
           <p className="text-right mt-8 col-span-2">
             ปัจจุบันค่าเฟ่ และห้องสมุดของเรา อยู่ในช่วงการดูแลของ นักศึกษารหัส 65070232 
